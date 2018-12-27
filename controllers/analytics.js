@@ -53,8 +53,8 @@ module.exports.overview = async function(req, res){
 
 module.exports.analytic = async function(req, res){
     try {
-        const allOrders = await Order.fint({user: req.user.id}).sort({date: 1})
-        const ordersMap = getOrdersMap(allorders)
+        const allOrders = await Order.find({user: req.user.id}).sort({date: 1})
+        const ordersMap = getOrdersMap(allOrders)
 
         const average = +(calculatePrice(allOrders) / Object.keys(ordersMap).length).toFixed(2)
 
@@ -88,12 +88,12 @@ function getOrdersMap(orders = []){
         daysOrders[date].push(order)
     })
 
-    return daysOrder
+    return daysOrders
 }
 
 function calculatePrice(orders = []){
     return orders.reduce((total, order) => {
-        const orderPrice = order.list.reduce((orderTotal), item => {
+        const orderPrice = order.list.reduce((orderTotal, item) => {
             return orderTotal += item.cost * item.quatity
         }, 0)
         return total += orderPrice
