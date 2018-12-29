@@ -18,7 +18,7 @@ export class HistoryPageComponent implements OnInit, OnDestroy, AfterViewInit {
   oSub: Subscription
   isFilterVisible = false
   orders: Order[] = []
-  filter: Filter = {}
+  filter: Filter
 
   offset = 0
   limit = STEP

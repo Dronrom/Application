@@ -30,6 +30,7 @@
     "angular2-router-loader": "^0.3.5",
     "bcryptjs": "^2.4.3",
     "body-parser": "^1.18.3",
+    "chart.js": "^2.7.3",
     "core-js": "^2.4.1",
     "cors": "^2.8.5",
     "express": "^4.16.4",

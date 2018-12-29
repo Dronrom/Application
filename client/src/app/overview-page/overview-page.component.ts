@@ -34,7 +34,7 @@ export class OverviewPageComponent implements OnInit, OnDestroy, AfterViewInit{
   }
 
   openInfo(){
-    
+    this.tapTarget.open()
   }
 
 }
