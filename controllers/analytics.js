@@ -33,17 +33,17 @@ module.exports.overview = async function(req, res){
        const compareNumber = (yesterdayOrdersNumber - ordersPerDay).toFixed(2)
 
        res.status(200).json({
-           gain: {
-               percent: Math.abs(+gainPercent),
-               compare: Math.abs(+compareGain),
-               yesterday: +yesterdayGain,
-               isHigher: gainPercent > 0
+           gains: {
+                percent: Math.abs(+gainPercent),
+                compare: Math.abs(+compareGain),
+                yesterday: +yesterdayGain,
+                isHigher: gainPercent > 0
            },
            orders: {
-            percent: Math.abs(+ordersPercent),
-            compare: Math.abs(+compareNumber),
-            yesterday: +yesterdayOrdersNumber,
-            isHigher: ordersPercent > 0
+                percent: Math.abs(+ordersPercent),
+                compare: Math.abs(+compareNumber),
+                yesterday: +yesterdayOrdersNumber,
+                isHigher: ordersPercent > 0
            }
        })
     } catch (e) {
@@ -51,7 +51,7 @@ module.exports.overview = async function(req, res){
     }
 }
 
-module.exports.analytic = async function(req, res){
+module.exports.analytics = async function(req, res){
     try {
         const allOrders = await Order.find({user: req.user.id}).sort({date: 1})
         const ordersMap = getOrdersMap(allOrders)

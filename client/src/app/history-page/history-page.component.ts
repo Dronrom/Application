@@ -18,7 +18,7 @@ export class HistoryPageComponent implements OnInit, OnDestroy, AfterViewInit {
   oSub: Subscription
   isFilterVisible = false
   orders: Order[] = []
-  filter: Filter
+  filter: Filter 
 
   offset = 0
   limit = STEP
@@ -76,5 +76,4 @@ export class HistoryPageComponent implements OnInit, OnDestroy, AfterViewInit {
   isFiltered(): boolean {
     return Object.keys(this.filter).length !== 0
   }
-
 }

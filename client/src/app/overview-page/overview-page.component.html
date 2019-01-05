@@ -18,25 +18,25 @@
           <div class="card light-blue lighten-2 white-text">
               <div class="card-content">
                   <span class="card-title">Выручка:</span>
-                  <h3>{{data.gain.yesterday}}</h3>
+                  <h3> руб.</h3>
                   <h3 
                     class=" m0 mb1"
                     [ngClass]="{
-                      'green-text text-darken-2': data.gain.isHigher,
-                      'red-text': !data.gain.isHigher
+                      'green-text text-darken-2': data.gains.isHigher,
+                      'red-text': !data.gains.isHigher
                     }"
                   >
                       <i class="material-icons">
-                        {{data.gain.isHigher ? 'arrow_upward' : 'arrow_downward'}} 
+                        {{data.gains.isHigher ? 'arrow_upward' : 'arrow_downward'}} 
                       </i>
-                      {{data.gain.percent}}%
+                      {{data.gains.percent}}%
                   </h3>
                   <p>
                     Выручка вашего бизнеса вчера на 
-                    {{data.gain.percent}}%
-                    {{data.gain.isHigher ? 'up' : 'down'}}
+                    {{data.gains.percent}}%
+                    {{data.gains.isHigher ? 'up' : 'down'}}
                     среднего: 
-                    {{data.gain.compare}} руб. в день
+                    {{data.gains.compare}} руб. в день
                   </p>
               </div>
           </div>
@@ -55,7 +55,7 @@
                     }"
                   >
                       <i class="material-icons">
-                          {{data.gain.isHigher ? 'arrow_upward' : 'arrow_downward'}}
+                          {{data.orders.isHigher ? 'arrow_upward' : 'arrow_downward'}}
                       </i>
                       {{data.orders.percent}}%
                   </h3>
